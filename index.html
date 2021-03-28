@@ -227,15 +227,102 @@
 
       
           
-        <div id="aplayer-fDPXgplW" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
+        <div id="aplayer-RMdwgeRO" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
 			  <script>
 				  var options = {"narrow":false,"autoplay":true,"showlrc":0,"width":"56%","mode":"single","mutex":true,"theme":"#e6d0b2","preload":"auto","listmaxheight":"413px","music":[{"title":"Moon in One's Cup 杯中明月","author":"陈致逸","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Moon%20in%20One's%20Cup%20%E6%9D%AF%E4%B8%AD%E6%98%8E%E6%9C%88.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Liyue-OST.jpg","lrc":""},{"title":"Peaceful Hike 山风拂萝衣","author":"陈致逸","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Peaceful%20Hike%20%E5%B1%B1%E9%A3%8E%E6%8B%82%E8%90%9D%E8%A1%A3.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Liyue-OST.jpg","lrc":""},{"title":"Three Piano Pieces, Op. 11(1909)：1.Mäßige Viertel","author":"Maurizio Pollini","url":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.mp3","pic":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.jpg","lrc":""}]};
-				  options.element = document.getElementById("aplayer-fDPXgplW");
+				  options.element = document.getElementById("aplayer-RMdwgeRO");
 				  var ap = new APlayer(options);
 			    window.aplayers || (window.aplayers = []);
 				  window.aplayers.push(ap);
 			  </script>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://knight.abn-team.top/2021/03/28/%E5%BA%86%E7%A5%9DLateX%E5%85%AC%E5%BC%8F%E5%90%AF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hoshino">
+      <meta itemprop="description" content="Salvete, amici!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hoshino's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/28/%E5%BA%86%E7%A5%9DLateX%E5%85%AC%E5%BC%8F%E5%90%AF%E7%94%A8/" class="post-title-link" itemprop="url">庆祝LateX公式启用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-03-28 21:17:51 / 修改时间：21:22:36" itemprop="dateCreated datePublished" datetime="2021-03-28T21:17:51+08:00">2021-03-28</time>
+            </span>
+
+          
+            <span id="/2021/03/28/%E5%BA%86%E7%A5%9DLateX%E5%85%AC%E5%BC%8F%E5%90%AF%E7%94%A8/" class="post-meta-item leancloud_visitors" data-flag-title="庆祝LateX公式启用" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/03/28/%E5%BA%86%E7%A5%9DLateX%E5%85%AC%E5%BC%8F%E5%90%AF%E7%94%A8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/03/28/%E5%BA%86%E7%A5%9DLateX%E5%85%AC%E5%BC%8F%E5%90%AF%E7%94%A8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>发现LaTeX公式支持也不难，就随手弄了一下。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">uninstall</span> hexo-renderer-marked <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-renderer-kramed <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<p>修改<code>node_modules\kramed\lib\rules\inline.js</code>：</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// em: /^<span class="symbol">\b</span>_((?:__|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)_<span class="symbol">\b</span>|^<span class="symbol">\*</span>((?:<span class="symbol">\*</span><span class="symbol">\*</span>|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)<span class="symbol">\*</span>(?!<span class="symbol">\*</span>)/,</span><br><span class="line">em: /^<span class="symbol">\*</span>((?:<span class="symbol">\*</span><span class="symbol">\*</span>|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)<span class="symbol">\*</span>(?!<span class="symbol">\*</span>)/,</span><br></pre></td></tr></table></figure>
+<p>参考：<a href="https://suixinblog.cn/2018/10/hexo-latex.html" target="_blank" rel="noopener">https://suixinblog.cn/2018/10/hexo-latex.html</a></p>
+<p>然后就可以愉快地打公式了。</p>
+<script type="math/tex; mode=display">
+\Gamma(x) = \int_{0}^{+\infty}{t^{x}e^{-t}dt} \\
+e^{ix} = isin\ x + cos\ x</script>
       
     </div>
 
@@ -277,10 +364,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-01-31 12:59:59 / 修改时间：16:25:46" itemprop="dateCreated datePublished" datetime="2021-01-31T12:59:59+08:00">2021-01-31</time>
+              <time title="创建时间：2021-01-31 12:59:59" itemprop="dateCreated datePublished" datetime="2021-01-31T12:59:59+08:00">2021-01-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-28 21:17:32" itemprop="dateModified" datetime="2021-03-28T21:17:32+08:00">2021-03-28</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -625,11 +718,9 @@
 <p>网上相关教程很多，基本上是要手动到<code>github</code>或者<code>golang</code>官网把插件下载回来，再放好路径配置安装，然而vscode提示有17个插件要装，要是全部手动完成就太难受了……</p>
 <p>认真检查报错信息之后发现，虽然这些插件大多来源于<code>github</code>上的代码仓库，照理说都是可以正常访问的，然而<code>golang</code>在获取插件的时候，默认是从某个带有proxy字样的域名获取，而不幸的是这个域名指向的IP不能访问，于是我想到或许可以换源解决这个问题，搜索到国内的镜像源和相关配置：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">go env -w GO111MODULE=on</span><br><span class="line">go env -w GOPROXY=https://goproxy.io,direct</span><br></pre></td></tr></table></figure>
-
 <p>完成配置重启vscode再尝试安装的时候，所有安装都毫无意外地成功了。解决。</p>
 <p>不过<code>GO111MODULE</code>这个参数貌似会带来一点问题，导致<code>package main</code>也会报错，当前还不明白其中的机制，所以再把参数改回来：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go env -w GO111MODULE=auto</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -818,15 +909,12 @@
           <p>使用Numpy的时候经常涉及大量数据的反复使用，需要存储。我没有专门查文档，直接通过Tab自动补全找到了save和load，基本用法也很简单。</p>
 <h2 id="numpy-save"><a href="#numpy-save" class="headerlink" title="numpy.save"></a>numpy.save</h2><p>对于基本使用来说，<code>numpy.save</code>只需要处理两个参数：文件名、变量，如：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"></span><br><span class="line">data = numpy.zeros([<span class="number">5</span>, <span class="number">5</span>])</span><br><span class="line">numpy.save(<span class="string">'data'</span>, arr = data)</span><br></pre></td></tr></table></figure>
-
 <p>虽然参数写的是<code>&#39;data&#39;</code>，但是实际上会保存成<code>data.npy</code>。</p>
 <p>此外还有<code>numpy.savez</code>，推测是使用gzip压缩。</p>
 <h2 id="numpy-load"><a href="#numpy-load" class="headerlink" title="numpy.load"></a>numpy.load</h2><p><code>numpy.load</code>的基本用法也比较简单，不过比<code>numpy.save</code>稍微多一点坑。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line">data = numpy.load(<span class="string">'data.npy'</span>)</span><br></pre></td></tr></table></figure>
-
 <p>注意，<code>numpy.save</code>会自动加上.npy的扩展名，但是<code>numpy.load</code>要写上完整文件名。对于用纯numpy的数据结构保存的文件，用上述语句就足够了。但是如果使用了<code>list</code>，<code>dict</code>这样的数据结构，就要多加一点内容：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data = numpy.load(<span class="string">'data.npy'</span>, allow_pickle = <span class="literal">True</span>).item()</span><br></pre></td></tr></table></figure>
-
 <p>通过这一语句，就可以顺利提取非numpy数据结构保存的内容。</p>
 
       
@@ -923,18 +1011,22 @@
 
       
           <p>文献笔记的记录和收集。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">Title</th>
-<th align="left">DOI</th>
+<th style="text-align:left">Title</th>
+<th style="text-align:left">DOI</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">Are there shared neural correlates between dyslexia and ADHD? A meta-analysis of   voxel-based morphometry studies</td>
-<td align="left"><a href="https://doi.org/10.1186/s11689-019-9287-8" target="_blank" rel="noopener">https://doi.org/10.1186/s11689-019-9287-8</a></td>
+<tbody>
+<tr>
+<td style="text-align:left">Are there shared neural correlates between dyslexia and ADHD? A meta-analysis of   voxel-based morphometry studies</td>
+<td style="text-align:left"><a href="https://doi.org/10.1186/s11689-019-9287-8" target="_blank" rel="noopener">https://doi.org/10.1186/s11689-019-9287-8</a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/07/04/%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0-%E9%98%85%E8%AF%BB%E9%9A%9C%E7%A2%8D%E4%B8%8EADHD%E5%85%B1%E6%82%A3%E9%97%AE%E9%A2%98%E7%9A%84VBM%E5%85%83%E5%88%86%E6%9E%90/#more" rel="contents">
@@ -1060,108 +1152,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://knight.abn-team.top/2020/05/04/How-To-Think-Straight-About-Psychology-%E6%91%98%E5%BD%95-5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Hoshino">
-      <meta itemprop="description" content="Salvete, amici!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hoshino's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/04/How-To-Think-Straight-About-Psychology-%E6%91%98%E5%BD%95-5/" class="post-title-link" itemprop="url">How To Think Straight About Psychology - 摘录 5</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-04 10:12:45" itemprop="dateCreated datePublished" datetime="2020-05-04T10:12:45+08:00">2020-05-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-10 06:56:08" itemprop="dateModified" datetime="2020-05-10T06:56:08+08:00">2020-05-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">心理学</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/05/04/How-To-Think-Straight-About-Psychology-%E6%91%98%E5%BD%95-5/" class="post-meta-item leancloud_visitors" data-flag-title="How To Think Straight About Psychology - 摘录 5" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/04/How-To-Think-Straight-About-Psychology-%E6%91%98%E5%BD%95-5/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/04/How-To-Think-Straight-About-Psychology-%E6%91%98%E5%BD%95-5/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>进入第三章。标题是“操作主义和本质主义”。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/04/How-To-Think-Straight-About-Psychology-%E6%91%98%E5%BD%95-5/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1234,7 +1224,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1247,7 +1237,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1355,6 +1345,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

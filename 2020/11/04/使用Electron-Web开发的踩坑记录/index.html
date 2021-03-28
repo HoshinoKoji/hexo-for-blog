@@ -233,13 +233,11 @@
         <p>之前在Python的GUI编写上有过一些简单的尝试，后来想到结合FastAPI的后端，自己再写一个前端熟悉一下HTML5/CSS/JS三件套，又听说Electron是Web套皮做GUI的不错的选择，所以也做了一些尝试，但是遇到了不少的坑。老实说，有些地方的文档实在是写了和没写差不多……</p>
 <p>下面在假定已经完成了Electron的安装，写好了Web页面的基础上，介绍一些经验。</p>
 <a id="more"></a>
-
 <h2 id="基于Napi实现C-和Node-js交互"><a href="#基于Napi实现C-和Node-js交互" class="headerlink" title="基于Napi实现C++和Node.js交互"></a>基于Napi实现C++和Node.js交互</h2><p>最初写好的Web的核心逻辑完全依赖Web上的API，而这一部分我已经写过C++的实现，所以自然地想到在Node.js里调用C++，然后向Web页面提供这部分功能。</p>
 <p>最开始搜到的实现方法是<code>node-ffi</code>，这个模块提供了和C++编写的动态链接库的交互，具体用法和Python的ctypes大同小异，也是注册接口，定义输入参数和返回值的数据类型，做好转换就完成了。遗憾的是，这个模块在2018年就已经停止维护，貌似并不支持新版的Node，不能通过编译，而我也不愿意专门为此倒退版本，于是作罢。</p>
 <p>在这之后，就只有在C++中编写原生接口的办法了。当然这里也有两种选择，一种是直接基于v8，一种是相对简单一些的Napi，我没有时间精力慢慢研究v8的用法，就用了相对简单的Napi。就是在这一步，我被<a href="https://nodejs.github.io/node-addon-api/class_napi_1_1_string.html" target="_blank" rel="noopener">官方文档</a>折磨了很久，还是通过网上各种代码片段才悟出了逻辑。当然也可能是因为我太菜，毕竟确实没有系统学习过C++，都是现查现用。</p>
 <p>下面贴上一小段代码，作为最小可用的简单实现。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;napi.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"crpyt.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">Napi::Buffer&lt;<span class="keyword">char</span>&gt; <span class="title">Encrypt</span><span class="params">(<span class="keyword">const</span> Napi::CallbackInfo&amp; info)</span> </span>&#123;</span><br><span class="line">	Napi::Env env = info.Env(); <span class="comment">//取出上下文</span></span><br><span class="line">	Napi::Buffer&lt;<span class="keyword">char</span>&gt; arr = info[<span class="number">0</span>].As&lt;Napi::Buffer&lt;<span class="keyword">char</span>&gt;&gt;();</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> length = arr.ByteLength();</span><br><span class="line">	<span class="keyword">char</span>* code = encrypt(arr.Data(), length);</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> outlen = <span class="built_in">strlen</span>(code);</span><br><span class="line">	Napi::Buffer&lt;<span class="keyword">char</span>&gt; output = Napi::Buffer&lt;<span class="keyword">char</span>&gt;::New(env, outlen);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">0</span>; i &lt; outlen; i++) output[i] = code[i];</span><br><span class="line">	<span class="built_in">release</span>(code);</span><br><span class="line">	<span class="keyword">return</span> output;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Napi::Object <span class="title">Init</span><span class="params">(Napi::Env env, Napi::Object exports)</span> </span>&#123;</span><br><span class="line">	exports.Set(Napi::<span class="keyword">String</span>::New(env, <span class="string">"encrypt"</span>), Napi::Function::New(env, Encrypt));</span><br><span class="line">	<span class="keyword">return</span> exports;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">NODE_API_MODULE(test, Init)</span><br></pre></td></tr></table></figure>
-
 <p>首先是引入Napi的头文件，这个没什么可说的。</p>
 <p>接下来是Encrypt函数，这里包含了我的核心逻辑，也是要供nodejs调用的方法。这里接受的传入参数<code>info</code>既包含了调用时的上下文，可以通过<code>info.Env()</code>获取，也可以通过索引取出nodejs调用时具体传入的参数。</p>
 <p>传入参数在Napi中的数据类型都是<code>Napi::Value</code>，这是Napi里大部分数据的基类。具体使用时，就涉及类型转换的问题，所有继承自<code>Napi::Value</code>的类都有一个<code>.As&lt;T&gt;()</code>的数据转换方法，可以转换成和JS对应的具体数据类型。在这里，我编写的接口接受的是一段字符串编码成的Buffer，所以转换成<code>Napi::Buffer&lt;char&gt;</code>。这里<code>Napi::Buffer</code>是一个模板类，而我希望按<code>char</code>的方式取值。</p>
@@ -249,34 +247,26 @@
 <p>到这里发现，其实这个过程还是比较顺畅的，我主要是在查找用法的时候遇到了困难。</p>
 <h2 id="模块的编译"><a href="#模块的编译" class="headerlink" title="模块的编译"></a>模块的编译</h2><p>这里是一个大坑，也是我最痛苦的地方。用C++编写完接口之后，就要用<code>node-gyp</code>编译成nodejs中可调用的二进制文件。一般把<code>node-gyp</code>安装为全局模块：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g node-gyp</span><br></pre></td></tr></table></figure>
-
 <p>在Windows上，<code>node-gyp</code>使用时依赖<code>Visual Studio Build Tools</code>和<code>Python</code>，分别用作编译的部分和生成项目文件的部分。注意是否添加了环境变量。</p>
 <p>首先写好编译的配置文件<code>bindings.gyp</code>：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"targets"</span>: [</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="attr">"target_name"</span>:<span class="string">"test"</span>,</span><br><span class="line">		<span class="attr">"sources"</span>:[<span class="string">"source.cpp"</span>],</span><br><span class="line">		<span class="attr">"include_dirs"</span>:[</span><br><span class="line">			<span class="string">"&lt;!@(node -p \"require('node-addon-api').include\")"</span>,</span><br><span class="line">			<span class="string">"C:/MinGW/mingw64/opt/include"</span></span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"conditions"</span>: [</span><br><span class="line">			[<span class="string">"OS=='win'"</span>,</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="attr">"libraries"</span>: [</span><br><span class="line">					'C:/Perl/c/lib/libcrypto.a', </span><br><span class="line">					'C:/Perl/c/lib/libssl.a'</span><br><span class="line">				]</span><br><span class="line">			&#125;]</span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"libraries"</span>: [],</span><br><span class="line">		<span class="attr">"dependencies"</span>:[</span><br><span class="line">		<span class="string">"&lt;!(node -p \"require('node-addon-api').gyp\")"</span></span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"cflags!"</span>:[<span class="string">"-fno-exceptions"</span>],</span><br><span class="line">		<span class="attr">"cflags_cc!"</span>:[<span class="string">"-fno-exceptions"</span>],</span><br><span class="line">		'defines':['NAPI_DISABLE_CPP_EXCEPTIONS']</span><br><span class="line">	&#125;</span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>大部分键值对都是字面意思，别的地方也很容易找到，这里主要讲我自己遇到的问题。我的源码用到了openssl库里的加密算法，而MSBuild使用的编译器默认包含的头文件里并没有openssl，所以我只好在include_dirs里加入了自己安装了<code>MinGW</code>里的头文件目录。另外，openssl使用的时候还会依赖对应的链接库，这也需要手动添加对应的路径。我尝试过添加dll路径，但是编译时无法识别，最后只能添加了Strawberry Perl里的静态链接库<code>libcrypto.a</code>和<code>libssl.a</code>，见示例配置文件的<code>conditions</code>字段。实际上<code>node-gyp</code>编译的时候本身貌似可以调用环境变量中的动态链接库，但是后续重新编译的时候就不行了，这是最困扰我的部分。</p>
 <p>完成后，使用<code>node-gyp</code>生成VS的项目文件并编译：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-gyp configure rebuild</span><br></pre></td></tr></table></figure>
-
 <p><strong>值得注意的是</strong>，这个MSBuild对编码的支持非常申必，它<strong>识别不了不带BOM的UTF-8源码</strong>，但是编译之后，里面用到的汉字常量又<strong>变成了GBK编码</strong>，令我困惑无比。</p>
 <p>编译完成后，在纯nodejs中很容易引入：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test = <span class="built_in">require</span>(<span class="string">'bindings'</span>)(<span class="string">'test'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(test.Encrypt(buffer))</span><br></pre></td></tr></table></figure>
-
 <h2 id="Electron再编译"><a href="#Electron再编译" class="headerlink" title="Electron再编译"></a>Electron再编译</h2><p>然后问题又来了，虽然在纯nodejs中可以正常运行，但是上面的代码拿到Electron里面运行又会报错。在网上查到，需要用到Electron配套的工具重新编译一遍才能供Electron正常使用。这里用到的模块是<code>electron-rebuild</code>，安装方法类似，使用时要执行目录下的二进制文件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./node_modules/.bin/electron-rebuild.cmd</span><br></pre></td></tr></table></figure>
-
 <p>可以看到，这里不需要额外的参数。上面提到的链接库的问题其实也主要是在这一步遇到的。</p>
 <p>完成编译之后，就可以在Electron内正常调用了。</p>
 <h2 id="Electron跨进程通信极简用法"><a href="#Electron跨进程通信极简用法" class="headerlink" title="Electron跨进程通信极简用法"></a>Electron跨进程通信极简用法</h2><p>最后再简单讲讲Electron主进程和渲染进程的交互。在最开始的地方我已经提到，我所做的的工作是要把处理信息的核心逻辑移到nodejs中，通过调用C++模块的方式实现，这里就涉及到了<code>ipc</code>的一些基本用法。</p>
 <p>首先，在Web页面的js文件中引入<code>ipc</code>模块：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ipc = <span class="built_in">require</span>(<span class="string">'electron'</span>).ipcRenderer</span><br></pre></td></tr></table></figure>
-
 <p>发送信息也非常简单：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//send(name, data)</span></span><br><span class="line">ipc.send(<span class="string">'renderer-request'</span>, &#123;<span class="string">'msg'</span>: <span class="string">'test'</span>, <span class="string">'en'</span>: <span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
-
 <p>在主进程中要引入另一个对应的模块，使用时监听对应信道：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ipc = <span class="built_in">require</span>(<span class="string">'electron'</span>).ipcMain</span><br><span class="line">ipc.on(<span class="string">'renderer-request'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event, arg</span>) </span>&#123;</span><br><span class="line">    event.sender.send(<span class="string">'renderer-response'</span>, &#123;<span class="string">'msg'</span>: <span class="string">'ok'</span>&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>注意在向渲染进程传回信息时，可以通过<code>event.sender</code>原路返回对应的进程。</p>
 
     </div>
@@ -379,7 +369,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -392,7 +382,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -498,6 +488,8 @@
 
 
 
+
+  
 
   
 

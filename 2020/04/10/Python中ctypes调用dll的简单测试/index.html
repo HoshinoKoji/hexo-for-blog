@@ -242,16 +242,12 @@
       
         <p>Python便于开发但是效率一般，C/C++效率较高但是开发难度相对更大，这可以说是老生常谈了。对于我这样的业余人士而言，效率并不是那么重要，但是如果能够做相对少的工作，而使得性能可以有较大的改善，我当然还是乐意的。这里介绍一下我对ctypes调用dll的简单测试。</p>
 <a id="more"></a>
-
 <p>首先，编写一个C的程序。这里使用最简单的累加来测试速度。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* test.c */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sumup</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sumup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">1</span>; i &lt;= <span class="number">1000000</span>; i++) &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>然后，使用gcc将test.c编译为Python可以调用的dll（注意是否添加了环境变量）。</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc <span class="keyword">test</span>.c -shared -fPIC -o <span class="keyword">test</span>.dll</span><br></pre></td></tr></table></figure>
-
 <p>在Python中分别通过ctypes调用sumup累加和使用Python实现累加，并通过装饰器（鸣谢：@Toyomu）计时。由于单次运行时间较短，为方便起见，这里选择了在Python中循环调用来延长时间。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> ctypes <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">fw = open(<span class="string">'data.dat'</span>, <span class="string">'w'</span>)   <span class="comment"># 记录数据用于分析</span></span><br><span class="line">dll = CDLL(<span class="string">r'.\test.dll'</span>)   <span class="comment"># 加载dll</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用装饰器重复调用，计时输出并记录</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco</span><span class="params">(order)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(func)</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_deco</span><span class="params">()</span>:</span>    </span><br><span class="line">            t1 = time()</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">50</span>):</span><br><span class="line">                func()</span><br><span class="line">            t2 = time() - t1</span><br><span class="line">            print(<span class="string">'Time cost of &#123;&#125;: &#123;&#125;'</span>.format(func.__name__, t2))</span><br><span class="line">            fw.write(<span class="string">'&#123;:.5f&#125;,'</span>.format(t2)) <span class="keyword">if</span> order == <span class="number">1</span> <span class="keyword">else</span> fw.write(<span class="string">'&#123;:.5f&#125;\n'</span>.format(t2))</span><br><span class="line">        <span class="keyword">return</span> _deco</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@deco(order = 1)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">c</span><span class="params">()</span>:</span></span><br><span class="line">    dll.sumup()</span><br><span class="line"></span><br><span class="line"><span class="meta">@deco(order = 2)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">py</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1000000</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成多组数据</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">80</span>):</span><br><span class="line">    c()</span><br><span class="line">    py()</span><br><span class="line"></span><br><span class="line">fw.close()</span><br></pre></td></tr></table></figure>
-
 <p>结束后，在data.dat中可见用时数据记录。</p>
 <p><img src="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/ctypes1.png" alt="data.dat"></p>
 <p>这里已经显然可以看到运行速度的巨大差异。我们在SPSS中使用配对样本t-test来进一步验证。</p>
@@ -359,7 +355,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -372,7 +368,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -478,6 +474,8 @@
 
 
 
+
+  
 
   
 
