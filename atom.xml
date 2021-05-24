@@ -6,7 +6,7 @@
   <link href="https://hoshino.club/atom.xml" rel="self"/>
   
   <link href="https://hoshino.club/"/>
-  <updated>2021-05-24T11:10:40.185Z</updated>
+  <updated>2021-05-24T11:17:11.026Z</updated>
   <id>https://hoshino.club/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://hoshino.club/2021/05/24/%E6%B3%A8%E6%84%8F%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/"/>
     <id>https://hoshino.club/2021/05/24/%E6%B3%A8%E6%84%8F%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/</id>
     <published>2021-05-24T11:04:59.000Z</published>
-    <updated>2021-05-24T11:10:40.185Z</updated>
+    <updated>2021-05-24T11:17:11.026Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>看到这个图的时候，确实有被笑到。等假期读一下<a href="http://dx.doi.org/10.3758/s13414-019-01846-w" target="_blank" rel="noopener">这篇文章</a>再谈谈感想，先挖个坑。</p><p><img src="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/attention1.png" alt="注意"></p>]]></content>
     
@@ -33,7 +33,7 @@
     
     
     
-    <category term="文献摘要" scheme="https://hoshino.club/categories/%E6%96%87%E7%8C%AE%E6%91%98%E8%A6%81/"/>
+    <category term="文献讨论" scheme="https://hoshino.club/categories/%E6%96%87%E7%8C%AE%E8%AE%A8%E8%AE%BA/"/>
     
     
     <category term="心理学" scheme="https://hoshino.club/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
@@ -161,7 +161,7 @@
     <published>2021-01-01T07:48:30.000Z</published>
     <updated>2021-01-14T13:12:00.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这是博客部署上线以后迎来的第一个新年，姑且写一个总结和展望，考完试再补档。</p><a id="more"></a>        <div id="aplayer-frShWdbX" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":true,"showlrc":0,"width":"56%","mode":"single","mutex":true,"theme":"#e6d0b2","preload":"auto","listmaxheight":"413px","music":[{"title":"茶屋にて","author":"V.A.","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/茶屋にて.mp3","pic":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.jpg","lrc":""}]};  options.element = document.getElementById("aplayer-frShWdbX");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这是博客部署上线以后迎来的第一个新年，姑且写一个总结和展望，考完试再补档。</p><a id="more"></a>        <div id="aplayer-JhEgmykI" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":true,"showlrc":0,"width":"56%","mode":"single","mutex":true,"theme":"#e6d0b2","preload":"auto","listmaxheight":"413px","music":[{"title":"茶屋にて","author":"V.A.","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/茶屋にて.mp3","pic":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.jpg","lrc":""}]};  options.element = document.getElementById("aplayer-JhEgmykI");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script>]]></content>
     
     
     <summary type="html">&lt;p&gt;这是博客部署上线以后迎来的第一个新年，姑且写一个总结和展望，考完试再补档。&lt;/p&gt;</summary>
@@ -317,7 +317,7 @@
     <published>2020-06-03T03:25:57.000Z</published>
     <updated>2021-02-25T14:46:58.694Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>        <div id="aplayer-crOogtsY" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":true,"showlrc":0,"width":"56%","mode":"single","mutex":true,"theme":"#e6d0b2","preload":"auto","listmaxheight":"413px","music":[{"title":"Moon in One's Cup 杯中明月","author":"陈致逸","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Moon%20in%20One's%20Cup%20%E6%9D%AF%E4%B8%AD%E6%98%8E%E6%9C%88.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Liyue-OST.jpg","lrc":""},{"title":"Peaceful Hike 山风拂萝衣","author":"陈致逸","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Peaceful%20Hike%20%E5%B1%B1%E9%A3%8E%E6%8B%82%E8%90%9D%E8%A1%A3.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Liyue-OST.jpg","lrc":""},{"title":"Three Piano Pieces, Op. 11(1909)：1.Mäßige Viertel","author":"Maurizio Pollini","url":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.mp3","pic":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.jpg","lrc":""}]};  options.element = document.getElementById("aplayer-crOogtsY");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>        <div id="aplayer-EBdmEiEk" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":true,"showlrc":0,"width":"56%","mode":"single","mutex":true,"theme":"#e6d0b2","preload":"auto","listmaxheight":"413px","music":[{"title":"Moon in One's Cup 杯中明月","author":"陈致逸","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Moon%20in%20One's%20Cup%20%E6%9D%AF%E4%B8%AD%E6%98%8E%E6%9C%88.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Liyue-OST.jpg","lrc":""},{"title":"Peaceful Hike 山风拂萝衣","author":"陈致逸","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Peaceful%20Hike%20%E5%B1%B1%E9%A3%8E%E6%8B%82%E8%90%9D%E8%A1%A3.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Liyue-OST.jpg","lrc":""},{"title":"Three Piano Pieces, Op. 11(1909)：1.Mäßige Viertel","author":"Maurizio Pollini","url":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.mp3","pic":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.jpg","lrc":""}]};  options.element = document.getElementById("aplayer-EBdmEiEk");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script>]]></content>
     
     
       
@@ -350,9 +350,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
-    
     <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
     
   </entry>
   
@@ -373,9 +373,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
-    
     <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
     
   </entry>
   
@@ -384,7 +384,7 @@
     <link href="https://hoshino.club/2020/05/01/%E6%96%87%E7%8C%AE%E7%AE%80%E8%BF%B0-Digital-Emotion-Contagion/"/>
     <id>https://hoshino.club/2020/05/01/%E6%96%87%E7%8C%AE%E7%AE%80%E8%BF%B0-Digital-Emotion-Contagion/</id>
     <published>2020-05-01T12:27:17.000Z</published>
-    <updated>2021-02-25T14:49:37.162Z</updated>
+    <updated>2021-05-24T11:16:58.661Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>博客的新题材，文献简述。我没有把它成为综述的原因是，这单纯是类似于一篇文献的摘要的东西，而且比较高的非正式程度让我很难把它称作“文献报告”，所以就自己发明（大概？）了这个词。</p><p>这次介绍的是社会心理学——我还没有什么基本认识的领域，的一篇文献。<strong>Digital Emotion Contagion</strong>，我翻译为网络情绪传染（如果Digital译成数字，直译的痕迹就太重了，这里顺便谴责一下不动脑直译术语的人），实际上是我们或许不会觉得陌生的现象，虽然出于现有研究证据不足的理由，这篇文献对于这种现象的存在与否还持有较为谨慎的态度。</p><p>[未完待续]</p><a id="more"></a><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>人们会在网络媒体上投入大量时间，也因而经常接触到他人的情绪表达，这种接触会导致人们的情绪表达变得与他人更相似，我们把这一过程称为“网络情绪传染”，本文回顾了正不断积累的有关网络情绪传染的文献。在定义情绪传染后，我们提出，数字情绪传染的一个独特之处在于，它是由致力于改善用户情绪体验的数字媒体平台介导的。此后，我们考察了网络情绪传染的测量，证实网络情绪传染存在时面临的挑战，以及相应的解决方法。最后，我们呼吁加大对于网络情绪传染在何种情形下有较强影响、较弱影响或无影响这一问题的关注。</p><h2 id="网络情绪传染的界定"><a href="#网络情绪传染的界定" class="headerlink" title="网络情绪传染的界定"></a>网络情绪传染的界定</h2>]]></content>
     
@@ -395,9 +395,7 @@
     
     
     
-    <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
-    <category term="文献简述" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E6%96%87%E7%8C%AE%E7%AE%80%E8%BF%B0/"/>
+    <category term="文献讨论" scheme="https://hoshino.club/categories/%E6%96%87%E7%8C%AE%E8%AE%A8%E8%AE%BA/"/>
     
     
     <category term="心理学" scheme="https://hoshino.club/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
@@ -446,9 +444,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
-    
     <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
     
   </entry>
   
