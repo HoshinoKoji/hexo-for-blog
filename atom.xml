@@ -119,9 +119,9 @@
     <link href="https://hoshino.club/2021/01/31/%E7%88%B1%E6%80%9D%E5%94%AF%E5%B0%94%E7%A7%91%E5%93%B2%E6%89%8B%E5%86%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <id>https://hoshino.club/2021/01/31/%E7%88%B1%E6%80%9D%E5%94%AF%E5%B0%94%E7%A7%91%E5%93%B2%E6%89%8B%E5%86%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
     <published>2021-01-31T04:59:59.000Z</published>
-    <updated>2021-07-10T07:34:27.293Z</updated>
+    <updated>2021-07-10T11:03:54.907Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近想到应该大致了解科学哲学的讨论内容，至少得到系统一些的认识，找到了风评还不错的<code>爱思唯尔科学哲学手册</code>，原名<em>Handbook of the Philosophy of Science</em>，全书按学科分出了诸多册，每一册都是大部头，我水平和精力又实在有限，所以先挑出General的部分看一看，以期留个印象，有时间再看心理学分册和其他分册。</p><p>在某群<del>水群</del>学术讨论的时候聊起科哲，发现大家或多或少有些了解，但也不深入。也有人指出，科哲对于实际研究帮助不大。这是可以理解的。在当前的科学实践中，光是追随范式独自完成一项实证研究都已非寻常事，比起傍晚的沉思，还是技术来得实在。但我也相信，如果真想搞出点大新闻，终归要更高瞻远瞩一些，而不是只有眼前的细枝末节。抽些时间对科学哲学做一些严肃的思考，还是“有用的”。而且“没用”又如何？<code>有用</code>本身就是一种价值上的预设。</p><p>对心理学来说，我认为科哲的意义更是不言而喻。上完一学期的心理学史，我姑且算是明白了前人的目标，这自然是收获；但麻烦的是，对这门学科在当代发展的目标又感到困惑了，当然这种困惑也算是一种收获。尽管对现状维持最低程度的认可很必要，但认知失衡还是迫使我寻求更好的答案。</p><p>笔记可能以提纲式的条目为主，必要时附上一些思考。</p><!---more---><h1 id="Laws-Theories-and-Research-Programs"><a href="#Laws-Theories-and-Research-Programs" class="headerlink" title="Laws, Theories, and Research Programs"></a>Laws, Theories, and Research Programs</h1><p>Keyword(s): Law-distinction</p><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul><li>Empirical theories can be described as traditionally (a)sets of statements, or sets of models, which are the specification of classes of set-theoretic structures satisfying certain conditions.</li><li>The history of law-distinction:<ol><li>Classical logical empiricists. The point of departure is theory-frfee vocabulary.</li><li>Meaning holism. All terms occurring in a theory are laden with theory.</li><li>Nagel, Hempel, and Sneed. Some may be laden, while some may not, moving from two-level, short-term dynamics to a multi-level, long-term dynamics of the development, where proper theories become observational law with a new higher proper theory.</li></ol></li></ul><h2 id="Examples-and-prima-facie-characteristics"><a href="#Examples-and-prima-facie-characteristics" class="headerlink" title="Examples and prima facie characteristics"></a>Examples and prima facie characteristics</h2><p>Examples of proper theories:</p><ul><li>Newton’s theory of graviation</li><li>Dalton’s theory of the atom</li><li>Mendel’s theory of genetics</li><li>Festinger’s theory of cognitive dissonance</li><li>Rational-choice theory</li><li>….</li></ul><p>Examples of observational laws:</p><ul><li>Falling objects near the earth have constant acceleration, or Galilei’s law of free falling.</li><li>Chemical compounds always decompose into component substances with constant weight ratios.</li><li>When people have made a decision there is active seeking out of information which is consistent with the action taken.</li><li>….</li></ul><p>Characteristics of observational laws and theories, or their differences:</p><ul><li>Wheras an observational law is usually represented as one, possibly complex, statement, a theory is usually presented as a system, a coherent set, of statements.</li><li>An observational law may specify what will happen under certain experimental conditions, while a theory may be stronger.</li></ul><p>Differences above do not well distinct laws and theories, howerver.</p><ul><li>Theories introduce new concepts, called “the theoretical terms”, that do not occur in laws.</li><li>Although laws can be explained by theories, they are relatively indepedent. That is, a law can be tested independently, and one law can be explained by multiple theories.</li></ul><p>As suggested, opposed to the classical logical empiricist point of view, the last two differences may serve as conditions of adequacy.</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近想到应该大致了解科学哲学的讨论内容，至少得到系统一些的认识，找到了风评还不错的<code>爱思唯尔科学哲学手册</code>，原名<em>Handbook of the Philosophy of Science</em>，全书按学科分出了诸多册，每一册都是大部头，我水平和精力又实在有限，所以先挑出General的部分看一看，以期留个印象，有时间再看心理学分册和其他分册。</p><p>在某群<del>水群</del>学术讨论的时候聊起科哲，发现大家或多或少有些了解，但也不深入。也有人指出，科哲对于实际研究帮助不大。这是可以理解的。在当前的科学实践中，光是追随范式独自完成一项实证研究都已非寻常事，比起傍晚的沉思，还是技术来得实在。但我也相信，如果真想搞出点大新闻，终归要更高瞻远瞩一些，而不是只有眼前的细枝末节。抽些时间对科学哲学做一些严肃的思考，还是“有用的”。而且“没用”又如何？<code>有用</code>本身就是一种价值上的预设。</p><p>对心理学来说，我认为科哲的意义更是不言而喻。上完一学期的心理学史，我姑且算是明白了前人的目标，这自然是收获；但麻烦的是，对这门学科在当代发展的目标又感到困惑了，当然这种困惑也算是一种收获。尽管对现状维持最低程度的认可很必要，但认知失衡还是迫使我寻求更好的答案。</p><p>笔记可能以提纲式的条目为主，必要时附上一些思考。</p><!---more---><h1 id="Laws-Theories-and-Research-Programs"><a href="#Laws-Theories-and-Research-Programs" class="headerlink" title="Laws, Theories, and Research Programs"></a>Laws, Theories, and Research Programs</h1><p>Keyword(s): Law-distinction</p><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul><li>Empirical theories can be described as traditionally (a)sets of statements, or sets of models, which are the specification of classes of set-theoretic structures satisfying certain conditions.</li><li>The history of law-distinction:<ol><li>Classical logical empiricists. The point of departure is theory-free vocabulary.</li><li>Meaning holism. All terms occurring in a theory are laden with theory.</li><li>Nagel, Hempel, and Sneed. Some may be laden, while some may not, moving from two-level, short-term dynamics to a multi-level, long-term dynamics of the development, where proper theories become observational law with a new higher proper theory.</li></ol></li></ul><h2 id="Examples-and-prima-facie-characteristics"><a href="#Examples-and-prima-facie-characteristics" class="headerlink" title="Examples and prima facie characteristics"></a>Examples and prima facie characteristics</h2><p>Examples of proper theories:</p><ul><li>Newton’s theory of graviation</li><li>Dalton’s theory of the atom</li><li>Mendel’s theory of genetics</li><li>Festinger’s theory of cognitive dissonance</li><li>Rational-choice theory</li><li>….</li></ul><p>Examples of observational laws:</p><ul><li>Falling objects near the earth have constant acceleration, or Galilei’s law of free falling.</li><li>Chemical compounds always decompose into component substances with constant weight ratios.</li><li>When people have made a decision there is active seeking out of information which is consistent with the action taken.</li><li>….</li></ul><p>Characteristics of observational laws and theories, or their differences:</p><ul><li>Wheras an observational law is usually represented as one, possibly complex, statement, a theory is usually presented as a system, a coherent set, of statements.</li><li>An observational law may specify what will happen under certain experimental conditions, while a theory may be stronger.</li></ul><p>Differences above do not well distinct laws and theories, howerver.</p><ul><li>Theories introduce new concepts, called “the theoretical terms”, that do not occur in laws.</li><li>Although laws can be explained by theories, they are relatively indepedent. That is, a law can be tested independently, and one law can be explained by multiple theories.</li></ul><p>As suggested, opposed to the classical logical empiricist point of view, the last two differences may serve as conditions of adequacy.</p>]]></content>
     
     
       
@@ -145,9 +145,9 @@
     <link href="https://hoshino.club/2021/01/01/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-%E6%96%B0%E5%B9%B4%E5%B1%95%E6%9C%9B/"/>
     <id>https://hoshino.club/2021/01/01/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-%E6%96%B0%E5%B9%B4%E5%B1%95%E6%9C%9B/</id>
     <published>2021-01-01T07:48:30.000Z</published>
-    <updated>2021-07-10T08:01:12.487Z</updated>
+    <updated>2021-07-10T12:57:57.103Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这是博客部署上线以后迎来的第一个新年，姑且写一个总结和展望，考完试再补档。</p><!---more--->        <div id="aplayer-gSZpcSOQ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":true,"showlrc":0,"width":"56%","mode":"single","mutex":true,"theme":"#e6d0b2","preload":"auto","listmaxheight":"413px","music":[{"title":"茶屋にて","author":"V.A.","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/茶屋にて.mp3","pic":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.jpg","lrc":""}]};  options.element = document.getElementById("aplayer-gSZpcSOQ");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这是博客部署上线以后迎来的第一个新年，姑且写一个总结和展望，考完试再补档。</p><!---more--->        <div id="aplayer-mkexrVUu" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":true,"showlrc":0,"width":"56%","mode":"single","mutex":true,"theme":"#e6d0b2","preload":"auto","listmaxheight":"413px","music":[{"title":"茶屋にて","author":"V.A.","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/茶屋にて.mp3","pic":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.jpg","lrc":""}]};  options.element = document.getElementById("aplayer-mkexrVUu");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script>]]></content>
     
     
     <summary type="html">这是博客部署上线以后迎来的第一个新年，姑且写一个总结和展望，考完试再补档。</summary>
@@ -305,7 +305,7 @@
     <published>2020-06-03T03:25:57.000Z</published>
     <updated>2021-07-04T10:59:56.256Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>        <div id="aplayer-evigwkVi" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":true,"showlrc":0,"width":"56%","mode":"single","mutex":true,"theme":"#e6d0b2","preload":"auto","listmaxheight":"413px","music":[{"title":"Moon in One's Cup 杯中明月","author":"陈致逸","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Moon%20in%20One's%20Cup%20%E6%9D%AF%E4%B8%AD%E6%98%8E%E6%9C%88.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Liyue-OST.jpg","lrc":""},{"title":"Peaceful Hike 山风拂萝衣","author":"陈致逸","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Peaceful%20Hike%20%E5%B1%B1%E9%A3%8E%E6%8B%82%E8%90%9D%E8%A1%A3.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Liyue-OST.jpg","lrc":""},{"title":"Three Piano Pieces, Op. 11(1909)：1.Mäßige Viertel","author":"Maurizio Pollini","url":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.mp3","pic":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.jpg","lrc":""}]};  options.element = document.getElementById("aplayer-evigwkVi");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>        <div id="aplayer-pmjYYpBm" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":true,"showlrc":0,"width":"56%","mode":"single","mutex":true,"theme":"#e6d0b2","preload":"auto","listmaxheight":"413px","music":[{"title":"Moon in One's Cup 杯中明月","author":"陈致逸","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Moon%20in%20One's%20Cup%20%E6%9D%AF%E4%B8%AD%E6%98%8E%E6%9C%88.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Liyue-OST.jpg","lrc":""},{"title":"Peaceful Hike 山风拂萝衣","author":"陈致逸","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Peaceful%20Hike%20%E5%B1%B1%E9%A3%8E%E6%8B%82%E8%90%9D%E8%A1%A3.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/Liyue-OST.jpg","lrc":""},{"title":"Three Piano Pieces, Op. 11(1909)：1.Mäßige Viertel","author":"Maurizio Pollini","url":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.mp3","pic":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.jpg","lrc":""}]};  options.element = document.getElementById("aplayer-pmjYYpBm");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script>]]></content>
     
     
     <summary type="html">一些不算BGM的BGM。</summary>
@@ -335,9 +335,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
-    
     <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
     
   </entry>
   
@@ -358,9 +358,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
-    
     <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
     
   </entry>
   
@@ -429,9 +429,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
-    
     <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
     
   </entry>
   
@@ -499,9 +499,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
-    
     <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
     
   </entry>
   
