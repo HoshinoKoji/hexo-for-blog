@@ -6,7 +6,7 @@
   <link href="https://hoshino.club/atom.xml" rel="self"/>
   
   <link href="https://hoshino.club/"/>
-  <updated>2021-07-12T03:40:56.352Z</updated>
+  <updated>2021-08-07T15:33:54.378Z</updated>
   <id>https://hoshino.club/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>线性代数笔记 - 投影</title>
+    <link href="https://hoshino.club/2021/08/04/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0-1/"/>
+    <id>https://hoshino.club/2021/08/04/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0-1/</id>
+    <published>2021-08-04T01:23:47.000Z</published>
+    <updated>2021-08-07T15:33:54.378Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>又开新坑了，不过把线代重学一遍的目标其实早已有之。终于清理完大作业，也能有些余裕来好好看书了。参考的教材是Gilbert Strang的<code>Introduction to Linear Algebra</code>，定位是写给工科类学生的教材。虽然有些地方可能追求直观，省略了一些严格的证明，也并不总是能提供易于理解的引入动机，但至少比某紫皮书好多了。</p><p>前面的部分在看书的时候没留下笔记，这里直接从<strong>投影</strong>开始。</p><h2 id="投影的引入"><a href="#投影的引入" class="headerlink" title="投影的引入"></a>投影的引入</h2><p>对于二维平面的向量而言，将向量$\overrightarrow{OA}$投影到向量$\overrightarrow{OB}$上，相当于过$A$作$OB$的垂线$AP$，得到$\overrightarrow{OA}$在$\overrightarrow{OB}$上的分量$\overrightarrow{OP}$，该分量能够用$\overrightarrow{OB}$的数乘表示，且剩余部分与$\overrightarrow{OB}$垂直。</p><p>在$n$​​维空间中，我们考虑对投影作更一般的定义。对于向量$\mathbf{b}$​​和向量空间$\mathbf{A}$​​，将$\mathbf{b    }$​​分解为投影$\mathbf{p}$​​和残差$\mathbf{e}$​​两部分，使得$\mathbf{p}$​​落在向量空间$\mathbf{A}$​​内，且$\mathbf{e}$​​与$\mathbf{A}$​​满足正交关系，其中$\mathbf{A}$​​​由矩阵列向量张成的空间表示。直观上来看，我们尽可能地在给定向量空间的能力范围内表示了被投影的向量。其关系可以表示如下：</p><script type="math/tex; mode=display">\mathbf{b} = \mathbf{p} + \mathbf{e},\ \mathbf{A}^\mathrm{T} \mathbf{e} = \mathbf{0}.</script><p>向量$\mathbf{p}$​落在向量空间$\mathbf{A}$​内，因此又可以表示为：</p><script type="math/tex; mode=display">\mathbf{p} = \mathbf{A}\mathbf{x}</script><p>由于$\mathbf{b}$和$\mathbf{p}$维度相同，都是$k\times 1$的列向量，所以，我们也希望找到一个维度为$k\times k$的投影矩阵$\mathbf{P}$​​，使得：</p><script type="math/tex; mode=display">\mathbf{p} = \mathbf{P}\mathbf{b}</script><p>下面将给出投影$\mathbf{p}$和投影矩阵$\mathbf{P}$的推导过程。</p><h2 id="投影与投影矩阵的推导"><a href="#投影与投影矩阵的推导" class="headerlink" title="投影与投影矩阵的推导"></a>投影与投影矩阵的推导</h2><p>我们用$\mathbf{Ax}$​表示向量$\mathbf{p}$​，由残差$\mathbf{e}$​和向量空间的正交关系，我们得到：</p><script type="math/tex; mode=display">\mathbf{A}^\mathrm{T} (\mathbf{b} - \mathbf{Ax}) = \mathbf{0}</script><p>等号左边拆分后移项，得到：</p><script type="math/tex; mode=display">\mathbf{A}^\mathrm{T} \mathbf{b} = \mathbf{A}^\mathrm{T}\mathbf{Ax}</script><p>假定$\mathbf{A}^\mathrm{T}\mathbf{A}$​可逆，等式两边同时乘以其逆：</p><script type="math/tex; mode=display">(\mathbf{A}^\mathrm{T}\mathbf{A})^{-1} \mathbf{A}^\mathrm{T} \mathbf{b} = \mathbf{x}</script><p>两边乘以$\mathbf{A}$，我们就得到了$\mathbf{p}$的表达式：</p><script type="math/tex; mode=display">\mathbf{p} = \mathbf{A}(\mathbf{A}^\mathrm{T}\mathbf{A})^{-1} \mathbf{A}^\mathrm{T} \mathbf{b}</script><p>将等式右边$\mathbf{b}$的左侧提取出来，就得到了投影矩阵的表达式：</p><script type="math/tex; mode=display">\mathbf{P} = \mathbf{A}(\mathbf{A}^\mathrm{T}\mathbf{A})^{-1} \mathbf{A}^\mathrm{T}</script><p>推导过程至此结束。如果向量空间仅包含一个列向量，上式结果可以进一步改写为向量的点乘和数乘，这里不再列举。</p><h2 id="直观理解与其他性质"><a href="#直观理解与其他性质" class="headerlink" title="直观理解与其他性质"></a>直观理解与其他性质</h2><p>这里主要关注投影矩阵$\mathbf{P}$的一些直观理解和性质。</p><p>首先，注意到在上文推导过程中，我们要求$\mathbf{A}^\mathrm{T}\mathbf{A}$可逆。直观上来看，我们可以想象一种情形：$\mathbf{A}$包括了线性相关的多个列向量，当我们列出方程，希望用$\mathbf{A}$的线性组合表示投影时，方程显然没有唯一解。不难证明，$\mathbf{A}^\mathrm{T}\mathbf{A}$可逆当且仅当$\mathbf{A}$的列向量线性无关。解决这个问题以后，我们再看看其他的性质。</p><p>$\mathbf{P}$​包含的列向量所张成的向量空间和$\mathbf{A}$​相同。直观上来看，$\mathbf{Pb}$​相当于列向量的线性组合，由于$\mathbf{p}$​总是落在向量空间$\mathbf{A}$​的范围内，因此$\mathbf{P}$​至少是$\mathbf{A}$​的子空间；而且，对于$\mathbf{A}$​内的任意一个向量$\mathbf{a}$​，我们都能任意地找到与$\mathbf{A}$​正交的$\mathbf{e}$​，使得$\mathbf{a} = \mathbf{P}(\mathbf{b} + \mathbf{e})$​，也就是说，我们能用$\mathbf{P}$​的线性组合表示$\mathbf{a}$​，因此$\mathbf{A}$​也是$\mathbf{P}$​的子空间。</p><p>接着讨论一些运算上的性质。不难发现，$\mathbf{P}^2 = \mathbf{P}$，这在直观上也很容易理解：$\mathbf{P}$作用于向量$\mathbf{b}$，已经得到了$\mathbf{A}$的线性表示；对于新的向量$\mathbf{p}$而言，$\mathbf{e} = \mathbf{0}$，左乘$\mathbf{P}$并不会带来任何改变。另外，由$\mathbf{P}$表达式的对称性，也不难推导$\mathbf{P}^\mathrm{T} = \mathbf{P}$。</p><p>最后，如果将满足$\mathbf{P}^2 = \mathbf{P}$且$\mathbf{P}^\mathrm{T} = \mathbf{P}$的矩阵$\mathbf{P}$定义为投影矩阵，我们会发现$\mathbf{I} - \mathbf{P}$也是投影矩阵。事实上，如果$\mathbf{A}$和$\mathbf{B}$是线性互补的两个子空间，且$\mathbf{P}$是$\mathbf{A}$对应的投影矩阵，那么$\mathbf{I} - \mathbf{P}$也是$\mathbf{B}$的投影矩阵，并且$\mathbf{p}$投影到$\mathbf{A}$的残差部分正是$\mathbf{p}$到$\mathbf{B}$的投影，因为：</p><script type="math/tex; mode=display">\mathbf{e} = \mathbf{b - Pb} = (\mathbf{I - P})\mathbf{b}</script><p>由此，$\mathbf{p}$能够完全由两个投影的加和表示了。</p>]]></content>
+    
+    
+    <summary type="html">线性代数学习的整理和思考。包括投影的引入、推导与直观理解、其他性质。</summary>
+    
+    
+    
+    <category term="数学" scheme="https://hoshino.club/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="线性代数" scheme="https://hoshino.club/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+    <category term="投影" scheme="https://hoshino.club/tags/%E6%8A%95%E5%BD%B1/"/>
+    
+  </entry>
   
   <entry>
     <title>注意到底是什么？</title>
@@ -147,7 +170,7 @@
     <published>2021-01-01T07:48:30.000Z</published>
     <updated>2021-07-12T03:59:07.255Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这是博客部署上线以后迎来的第一个新年，姑且写一个总结和展望，考完试再补档。</p><!---more--->        <div id="aplayer-aGiyeGKT" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":true,"showlrc":0,"width":"56%","mode":"single","mutex":true,"theme":"#e6d0b2","preload":"auto","listmaxheight":"413px","music":[{"title":"茶屋にて","author":"V.A.","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/music/茶屋にて.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/others/Test.jpg","lrc":""}]};  options.element = document.getElementById("aplayer-aGiyeGKT");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这是博客部署上线以后迎来的第一个新年，姑且写一个总结和展望，考完试再补档。</p><!---more--->        <div id="aplayer-OtoBkOkn" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":true,"showlrc":0,"width":"56%","mode":"single","mutex":true,"theme":"#e6d0b2","preload":"auto","listmaxheight":"413px","music":[{"title":"茶屋にて","author":"V.A.","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/music/茶屋にて.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/others/Test.jpg","lrc":""}]};  options.element = document.getElementById("aplayer-OtoBkOkn");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script>]]></content>
     
     
     <summary type="html">这是博客部署上线以后迎来的第一个新年，姑且写一个总结和展望，考完试再补档。</summary>
@@ -305,7 +328,7 @@
     <published>2020-06-03T03:25:57.000Z</published>
     <updated>2021-07-12T03:43:02.096Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>        <div id="aplayer-cxkKxPbp" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":true,"showlrc":0,"width":"56%","mode":"single","mutex":true,"theme":"#e6d0b2","preload":"auto","listmaxheight":"413px","music":[{"title":"Moon in One's Cup 杯中明月","author":"陈致逸","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/music/Moon%20in%20One's%20Cup%20%E6%9D%AF%E4%B8%AD%E6%98%8E%E6%9C%88.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/others/Liyue-OST.jpg","lrc":""},{"title":"Peaceful Hike 山风拂萝衣","author":"陈致逸","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/music/Peaceful%20Hike%20%E5%B1%B1%E9%A3%8E%E6%8B%82%E8%90%9D%E8%A1%A3.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/others/Liyue-OST.jpg","lrc":""},{"title":"Three Piano Pieces, Op. 11(1909)：1.Mäßige Viertel","author":"Maurizio Pollini","url":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/music/Test.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/others/Test.jpg","lrc":""}]};  options.element = document.getElementById("aplayer-cxkKxPbp");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>        <div id="aplayer-eySKrGSK" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":true,"showlrc":0,"width":"56%","mode":"single","mutex":true,"theme":"#e6d0b2","preload":"auto","listmaxheight":"413px","music":[{"title":"Moon in One's Cup 杯中明月","author":"陈致逸","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/music/Moon%20in%20One's%20Cup%20%E6%9D%AF%E4%B8%AD%E6%98%8E%E6%9C%88.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/others/Liyue-OST.jpg","lrc":""},{"title":"Peaceful Hike 山风拂萝衣","author":"陈致逸","url":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/music/Peaceful%20Hike%20%E5%B1%B1%E9%A3%8E%E6%8B%82%E8%90%9D%E8%A1%A3.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/others/Liyue-OST.jpg","lrc":""},{"title":"Three Piano Pieces, Op. 11(1909)：1.Mäßige Viertel","author":"Maurizio Pollini","url":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/music/Test.mp3","pic":"https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/others/Test.jpg","lrc":""}]};  options.element = document.getElementById("aplayer-eySKrGSK");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script>]]></content>
     
     
     <summary type="html">一些不算BGM的BGM。</summary>
@@ -335,9 +358,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
     <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
+    
+    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
   </entry>
   
@@ -358,9 +381,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
     <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
+    
+    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
   </entry>
   
@@ -429,9 +452,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
     <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
+    
+    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
   </entry>
   
@@ -479,29 +502,6 @@
     <category term="Python" scheme="https://hoshino.club/tags/Python/"/>
     
     <category term="ctypes" scheme="https://hoshino.club/tags/ctypes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How To Think Straight About Psychology - 摘录 2</title>
-    <link href="https://hoshino.club/2020/04/04/How-to-think-straight-about-psychology-%E6%91%98%E5%BD%952/"/>
-    <id>https://hoshino.club/2020/04/04/How-to-think-straight-about-psychology-%E6%91%98%E5%BD%952/</id>
-    <published>2020-04-04T14:40:07.000Z</published>
-    <updated>2021-07-10T07:38:11.345Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这次看的还是绪论部分，大致讲述了心理学和“常识”的冲突，有价值的地方有不少。</p><span id="more"></span><h2 id="Sentence-1"><a href="#Sentence-1" class="headerlink" title="Sentence 1"></a>Sentence 1</h2><blockquote><p>We all have implicit models of behavior that govern our interactions and out thoughts about ourselves and other people. Indeed, some social, personality, and cognitive psychologists study the nature of these implicit psychological theories. Rarely do we state our theories clearly and logically. (Chap. 1, p. 13)</p></blockquote><p>简评：这说的应该就是“心理理论”，确实是我们会视为理所当然，常常忽视但是意义非凡的心理现象。</p><h2 id="Sentence-2"><a href="#Sentence-2" class="headerlink" title="Sentence 2"></a>Sentence 2</h2><blockquote><p>That folk wisdom is “after the fact” wisdom, and that it actually is useless in a truly predictive sence, is why sociologist Duncan Watts titled one of his books: <em>Everything Is Obvious——Once You Know the Answer</em>. (Chap. 1, p. 14)</p></blockquote><p>简评：这种意见，有种似曾相识的感觉。当然我不知道身边会有多少人是这么想的。常识不等于知识，大概也是说起来容易，但是容易忘记的事情。</p><h2 id="Sentence-3"><a href="#Sentence-3" class="headerlink" title="Sentence 3"></a>Sentence 3</h2><blockquote><p>Folk beliefs are not always immune to evidence. Sometimes, when the contradictory evidence becomes too widely known, folk psychology (“common sense”) does change. (Chap. 1, p. 16)</p></blockquote><p>简评：对前人的清醒认识和在当下的执迷不悟似乎也是因此并存。总的来说，这种影响可大可小，作者应该是比较强调大的部分。</p><h2 id="Sentence-4"><a href="#Sentence-4" class="headerlink" title="Sentence 4"></a>Sentence 4</h2><blockquote><p>Past president of the APA Gerald Koocher (2006) boldly warned us about the nature of psychological research by titling one of his presidential columns “Psychological Science is not Political Correct.”  (Chap. 1, p. 18)</p></blockquote><p>简评：这也是很重要的一点。在这种意义上，心理学研究更容易遭受有偏向性的解读。</p><h2 id="Sentence-5"><a href="#Sentence-5" class="headerlink" title="Sentence 5"></a>Sentence 5</h2><blockquote><p>Examples such as this arise because the relatively new science of psychology has just begun to uncover facts about aspects of behavior that have previously escaped study. The relative youth of psychology as a science partially explains why many people are confused about the discipline. Nevertheless, during the past several decades, psychology has become firmly established in the interconnecting structure of knowledge that we call science. (Chap. 1, p. 18)</p></blockquote><p>简评：让人困惑，也让人兴奋。这就是现状。</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;这次看的还是绪论部分，大致讲述了心理学和“常识”的冲突，有价值的地方有不少。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
-    
-    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
-    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
     
   </entry>
   
